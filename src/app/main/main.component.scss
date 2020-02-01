@@ -1,0 +1,39 @@
+@import '~@angular/material/theming';
+@import '../../styles/theme.scss';
+
+.mat-nav-list {
+  padding-right: .5rem;
+
+  a.mat-list-item {
+    border-bottom-right-radius: 4rem;
+    border-top-right-radius: 4rem;
+  
+    &--active {
+      background-color: mat-color($pokemon-primary, 50);
+      color: mat-color($pokemon-primary, 900);
+  
+      &:focus,
+      &:hover {
+        background-color: mat-color($pokemon-primary, 100);
+      }
+    }
+  }
+} 
+
+.mat-sidenav-content{
+  margin-top: 64px;
+}
+
+.mat-toolbar {
+  @include mat-elevation(6);
+
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  &.mat-toolbar-single-row {
+    @media (max-width: 599px) {
+      height: 64px;
+    }
+  }
+}

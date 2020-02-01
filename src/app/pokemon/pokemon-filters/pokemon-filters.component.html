@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type">
+            <mat-option>All</mat-option>
+            <mat-option *ngFor="let type of types"
+                [value]="type">
+                {{ type.name | fromResourceName }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>

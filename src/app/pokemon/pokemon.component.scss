@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+
+.list-item-text {
+    max-width: calc(100vw - 7.5rem);
+
+    &>span {
+        margin-right: 1rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__name {
+        margin-bottom: 0;
+    }
+}
+
+.mat-card {
+    cursor: pointer;
+}
+
+.mat-fab {
+    bottom: 1rem;
+    position: fixed;
+    right: 2rem;
+    transition: right 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 1;
+
+    &--shoved {
+        right: 17rem;
+        transition: right 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+.mat-list {
+    padding-top: 0;
+}
+
+.mat-list-item {
+    border-radius: 4px;
+    margin: 1rem;
+    width: auto;
+
+    &:last-of-type {
+        margin-bottom: 4rem;
+    }
+
+    button {
+        flex-shrink: 0;
+    }
+}
+
+.mat-sidenav {
+    padding: 1rem;
+    width: 15rem;
+}
+
+// .mat-sidenav-content {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-evenly;
+// }
+
+
+.cdk-virtual-scroll-viewport {
+    height: calc(100vh - 64px);
+}

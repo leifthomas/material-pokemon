@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [fixedInViewport]="true"
+        [fixedTopGap]="64"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="false"
+        class="sidenav"
+        position="end"
+        #filtersDrawer>
+        <app-pokemon-filters [types]="types | async"></app-pokemon-filters>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-list>
+            <cdk-virtual-scroll-viewport [itemSize]="72">
+                <div *ngIf="!(pokemonSpeciesList | async)?.length" class="loading-indicator">
+                    <img src="/assets/loading.gif">    
+                </div>
+                <ng-container *cdkVirtualFor="let pokemonSpecies of (pokemonSpeciesList | async)">
+                    <mat-list-item [routerLink]="pokemonSpecies.id" class="mat-card">
+                        <img *ngIf="pokemonSpecies.defaultPokemon.sprites.front_default"
+                            [alt]="'image of ' + pokemonSpecies.name"
+                            [src]="pokemonSpecies.defaultPokemon.sprites.front_default"
+                            matListAvatar>
+                        <div class="list-item-text" matLine>
+                            <span class="list-item-text__name mat-h2">
+                                {{ pokemonSpecies.id }}
+                                -
+                                {{ pokemonSpecies.name | fromResourceName }}
+                            </span>
+                            <span class="list-item-text__type">
+                                <span *ngFor="let pokemonType of pokemonSpecies.defaultPokemon.types; index as i"><span *ngIf="i > 0">/</span>{{ pokemonType.type.name | fromResourceName }}</span>
+                            </span>
+                        </div>
+                    </mat-list-item>
+                </ng-container>
+            </cdk-virtual-scroll-viewport>
+        </mat-list>
+        <button [ngClass]="{ 'mat-fab--shoved': filtersDrawer.opened }"
+            (click)="filtersDrawer.toggle()"
+            aria-label="filter pokemon"
+            color="primary"
+            mat-fab>
+            <mat-icon>filter_list</mat-icon>
+        </button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<router-outlet></router-outlet>
