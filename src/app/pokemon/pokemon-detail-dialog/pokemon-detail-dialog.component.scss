@@ -38,16 +38,16 @@
     flex-direction: row;
 
     &__bar {
-        flex: 5;
+        width: 100%;
     }
 
     &__name {
-        flex: 2;
+        min-width: 7rem;
     }
 
     &__value {
-        flex: 1;
-        margin-right: 2rem;
+        margin-right: 1rem;
+        min-width: 2rem;
         text-align: right;
     }
 }

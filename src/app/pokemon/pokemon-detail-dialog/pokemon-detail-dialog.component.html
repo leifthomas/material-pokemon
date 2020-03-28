@@ -28,7 +28,7 @@
             <mat-tab label="Base Stats">
                 <div class="tab-content">
                     <div *ngFor="let stat of (pokemon | async).defaultPokemon.stats" class="stat">
-                        <div class="stat__name">{{ stat.stat.name | fromResourceName | mapText: { 'Hp': 'HP' } }}</div>
+                        <div class="stat__name mat-body-strong">{{ stat.stat.name | fromResourceName | mapText: { 'Hp': 'HP' } }}</div>
                         <div class="stat__value">{{ stat.base_stat }}</div>
                         <div class="stat__bar">
                             <mat-progress-bar [value]="(stat.base_stat/255) * 100"
