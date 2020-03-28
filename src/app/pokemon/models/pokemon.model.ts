@@ -1,6 +1,7 @@
 import { NamedApiResource } from '../../common/models/named-api-resource.model';
 import { PokemonSpecies } from './pokemon-species.model';
 import { PokemonSprites } from './pokemon-sprites.model';
+import { PokemonStat } from './pokemon-stat.model';
 import { PokemonType } from './pokemon-type.model';
 
 export class Pokemon {
@@ -18,11 +19,14 @@ export class Pokemon {
     order: number;
     species: NamedApiResource<PokemonSpecies>;
     sprites: PokemonSprites;
-    // stats: Array<PokemonStat>;
+    stats: Array<PokemonStat>;
     types: Array<PokemonType>;
     weight: number;
 
     constructor(data?: object) {
         Object.assign(this, data);
+        this.stats = this.stats.sort((statA: PokemonStat, statB: PokemonStat) => {
+            return statA.stat.name.toLowerCase() < statB.stat.name.toLowerCase() ? -1 : 1;
+        });
     }
 }

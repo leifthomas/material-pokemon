@@ -25,9 +25,18 @@
                     {{ (pokemon | async)?.flavorTextEnglish.flavor_text  }}    
                 </div>
             </mat-tab>
-            <mat-tab label="Evolution">
+            <mat-tab label="Base Stats">
                 <div class="tab-content">
-                    Coming soon!
+                    <div *ngFor="let stat of (pokemon | async).defaultPokemon.stats" class="stat">
+                        <div class="stat__name">{{ stat.stat.name | fromResourceName | mapText: { 'Hp': 'HP' } }}</div>
+                        <div class="stat__value">{{ stat.base_stat }}</div>
+                        <div class="stat__bar">
+                            <mat-progress-bar [value]="(stat.base_stat/255) * 100"
+                                color="accent"
+                                mode="determinate">
+                            </mat-progress-bar>
+                        </div>
+                    </div>
                 </div>          
             </mat-tab>
         </mat-tab-group>

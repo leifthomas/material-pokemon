@@ -49,7 +49,9 @@ export class PokemonSpeciesService extends ServiceBaseClass {
             return this.namedApiResourceService
               .getNamedApiResource<Pokemon>(defaultVariety.pokemon)
               .pipe(
-                map((defaultPokemon: Pokemon) => {
+                map((defaultPokemonRaw: Pokemon) => {
+                  const defaultPokemon: Pokemon = new Pokemon(defaultPokemonRaw);
+                  
                   return Object.assign(new PokemonSpecies(species), { defaultPokemon });
                 })
               );
