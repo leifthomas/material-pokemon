@@ -2,43 +2,43 @@
 
 .pokemon-detail-dialog-panel {
     &--black .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-gray, 900), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 900), white);
     }
 
     &--blue .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-blue, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-blue, 500), white);
     }
 
     &--brown .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-brown, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-brown, 500), white);
     }
 
     &--gray .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-gray, 700), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 700), white);
     }
 
     &--green .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-green, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-green, 500), white);
     }
 
     &--pink .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-pink, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-pink, 500), white);
     }
 
     &--purple .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-purple, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-purple, 500), white);
     }
 
     &--red .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-red, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-red, 500), white);
     }
 
     &--white .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-gray, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 400), white);
     }
 
     &--yellow .mat-dialog-container {
-        background-image: linear-gradient(to bottom, mat-color($mat-yellow, 500), transparent);
+        background-image: linear-gradient(to bottom, mat-color($mat-yellow, 500), white);
     }
 
     .mat-dialog-container {
