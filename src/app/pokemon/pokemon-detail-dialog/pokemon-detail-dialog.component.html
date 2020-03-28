@@ -1,22 +1,40 @@
-<div class="dialog-title" mat-dialog-title>
-    <h1 class="dialog-title__title">{{ (pokemon | async)?.name | fromResourceName }}</h1>
-    <!-- <p class="mat-small">
-        <span *ngFor="let pokemonType of (pokemon | async)?.defaultPokemon.types; index as i"><span *ngIf="i > 0">/</span>{{ pokemonType.type.name | fromResourceName }}</span>
-    </p> -->
-    <mat-chip-list [selectable]="false">
-        <mat-chip *ngFor="let pokemonType of (pokemon | async)?.defaultPokemon.types"
-            [disableRipple]="true"
-            [removable]="false"
-            [selectable]="false">
-            {{ pokemonType.type.name | fromResourceName }}
-        </mat-chip>
-    </mat-chip-list>
-    <div [attr.class]="'dialog-title__image dialog-title__image--' + (pokemon | async)?.color.name">
-        <img *ngIf="(pokemon | async)?.defaultPokemon.sprites.front_default"
-            [alt]="'image of ' + (pokemon | async)?.name"
-            [src]="(pokemon | async)?.defaultPokemon.sprites.front_default">
+
+<ng-container *ngIf="pokemon | async; else spinner">
+    <div class="dialog-title" mat-dialog-title>
+        <div>
+            <h1 class="dialog-title__title">{{ (pokemon | async)?.name | fromResourceName }}</h1>
+            <mat-chip-list [selectable]="false">
+                <mat-chip *ngFor="let pokemonType of (pokemon | async)?.defaultPokemon.types"
+                    [disableRipple]="true"
+                    [removable]="false"
+                    [selectable]="false">
+                    {{ pokemonType.type.name | fromResourceName }}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+        <div [attr.class]="'dialog-title__image dialog-title__image--' + (pokemon | async)?.color.name">
+            <img *ngIf="(pokemon | async)?.defaultPokemon.sprites.front_default"
+                [alt]="'image of ' + (pokemon | async)?.name"
+                [src]="(pokemon | async)?.defaultPokemon.sprites.front_default">
+        </div>
     </div>
-</div>
-<div mat-dialog-content>
-    {{ (pokemon | async)?.flavorTextEnglish.flavor_text  }}
-</div>
+    <div mat-dialog-content>
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="About">
+                <div class="tab-content">
+                    {{ (pokemon | async)?.flavorTextEnglish.flavor_text  }}    
+                </div>
+            </mat-tab>
+            <mat-tab label="Evolution">
+                <div class="tab-content">
+                    Coming soon!
+                </div>          
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</ng-container>
+<ng-template #spinner>
+    <div class="loading-indicator">
+        <img src="/assets/loading.gif">
+    </div>
+</ng-template>

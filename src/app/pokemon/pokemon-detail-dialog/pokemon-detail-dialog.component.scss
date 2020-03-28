@@ -1,57 +1,38 @@
 @import '~@angular/material/theming';
 
 .dialog-title {
+    display: flex;
     margin-bottom: 0;
 
     &__image {
         align-items: center;
         display: flex;
-        height: 10rem;
         justify-content: center;
-        margin: 1rem -24px;
-
-        &--black {
-            background-image: linear-gradient(to bottom, mat-color($mat-gray, 900), mat-color($mat-gray, 500), mat-color($mat-gray, 900));
-        }
-
-        &--blue {
-            background-image: linear-gradient(to bottom, mat-color($mat-blue, 500), mat-color($mat-blue, 100), mat-color($mat-blue, 500));
-        }
-
-        &--brown {
-            background-image: linear-gradient(to bottom, mat-color($mat-brown, 500), mat-color($mat-brown, 100), mat-color($mat-brown, 500));
-        }
-
-        &--gray {
-            background-image: linear-gradient(to bottom, mat-color($mat-gray, 700), mat-color($mat-gray, 300), mat-color($mat-gray, 700));
-        }
-
-        &--green {
-            background-image: linear-gradient(to bottom, mat-color($mat-green, 500), mat-color($mat-green, 100), mat-color($mat-green, 500));
-        }
-
-        &--pink {
-            background-image: linear-gradient(to bottom, mat-color($mat-pink, 500), mat-color($mat-pink, 100), mat-color($mat-pink, 500));
-        }
-
-        &--purple {
-            background-image: linear-gradient(to bottom, mat-color($mat-purple, 500), mat-color($mat-purple, 100), mat-color($mat-purple, 500));
-        }
-
-        &--red {
-            background-image: linear-gradient(to bottom, mat-color($mat-red, 500), mat-color($mat-red, 100), mat-color($mat-red, 500));
-        }
-
-        &--white {
-            background-image: linear-gradient(to bottom, mat-color($mat-gray, 500), mat-color($mat-gray, 100), mat-color($mat-gray, 500));
-        }
-
-        &--yellow {
-            background-image: linear-gradient(to bottom, mat-color($mat-yellow, 500), mat-color($mat-yellow, 100), mat-color($mat-yellow, 500));
-        }
+        margin: .5rem auto .5rem auto;
     }
 
     &__title {
-        margin-bottom: 0;
+        color: white;
     }
+
+    h1 {
+        text-shadow: 0 .05rem .1rem mat-color($mat-gray, 600);
+    }
+}
+
+.mat-chip {
+    background-color: rgba(224, 224, 224, .5);
+}
+
+.mat-dialog-content {
+    @include mat-elevation(2);
+
+    background-color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 0;
+}
+
+.tab-content {
+    margin: 1.5rem;
 }

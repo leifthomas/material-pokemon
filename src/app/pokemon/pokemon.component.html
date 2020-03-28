@@ -13,7 +13,7 @@
         <mat-list>
             <cdk-virtual-scroll-viewport [itemSize]="72">
                 <div *ngIf="!(pokemonSpeciesList | async)?.length" class="loading-indicator">
-                    <img src="/assets/loading.gif">    
+                    <img src="/assets/loading.gif">
                 </div>
                 <ng-container *cdkVirtualFor="let pokemonSpecies of (pokemonSpeciesList | async)">
                     <mat-list-item [routerLink]="pokemonSpecies.id" class="mat-card">

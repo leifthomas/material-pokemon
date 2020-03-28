@@ -10,8 +10,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { CommonModule as PokemonCommonModule } from '../common/common.module';
 import { NamedApiResourceService } from '../common/services/named-api-resource.service';
@@ -43,8 +45,10 @@ import { TypeService } from './services/type.service';
     MatFormFieldModule,
     MatIconModule,
     MatListModule,
+    MatProgressSpinnerModule,
     MatSelectModule,
     MatSidenavModule,
+    MatTabsModule,
     PokemonCommonModule,
     PokemonRoutingModule,
     ReactiveFormsModule,

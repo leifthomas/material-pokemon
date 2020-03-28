@@ -23,7 +23,8 @@ export class PokemonDetailComponent implements OnInit {
           data: {
             id: Number(this.route.snapshot.params.id)
           },
-          width: '300px'
+          panelClass: 'pokemon-detail-dialog-panel',
+          width: '500px'
         })
       .afterClosed()
       .subscribe(() => {

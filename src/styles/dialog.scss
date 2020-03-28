@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+
+.pokemon-detail-dialog-panel {
+    &--black .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 900), transparent);
+    }
+
+    &--blue .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-blue, 500), transparent);
+    }
+
+    &--brown .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-brown, 500), transparent);
+    }
+
+    &--gray .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 700), transparent);
+    }
+
+    &--green .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-green, 500), transparent);
+    }
+
+    &--pink .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-pink, 500), transparent);
+    }
+
+    &--purple .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-purple, 500), transparent);
+    }
+
+    &--red .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-red, 500), transparent);
+    }
+
+    &--white .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-gray, 500), transparent);
+    }
+
+    &--yellow .mat-dialog-container {
+        background-image: linear-gradient(to bottom, mat-color($mat-yellow, 500), transparent);
+    }
+
+    .mat-dialog-container {
+        border-radius: 16px;
+        padding-bottom: 0;
+    }
+}
